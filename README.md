@@ -28,6 +28,7 @@ The flickering may also be due to too high a learning rate after around 40 epoch
 - Do different encodings for color matter at all? After all the network only sees 3 random floating point numbers ranging from 0 to 1. Changing the interpretation of those numbers
 both in input and output shouldn't affect training (although maybe generating a visually different image).
 - Check if flickering is due to network training instability (high learning rate).
+- Why are the colors neatly aranged in a hue "circle", rather than just having blobs of colors packed in different regions of space? Why does this happen without an explicit KL divergence term in the loss function? Perhaps the network's simplicity acts as a regularizer in this case...
 
 ## Reproducing/Running experiments
 All experiments are in self contained Jupyer Notebooks. In order to run the notebook locally you'll need the following packages:
