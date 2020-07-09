@@ -22,6 +22,13 @@ network, it isn't capable of encoding all the information RGB color requires int
 
 The flickering may also be due to too high a learning rate after around 40 epochs. I'll experiment with decaying learning rates to see if the behavior changes.
 
+### MSE + Triplet RGB
+Following the initial simple approach, I experimented with adding a triplet loss.
+
+![MSE + Triplet RGB](animations/triplet_rgb.gif)
+
+The idea behind the triplet loss is to approximate encodings of similar colors while separating encodings of more distinct colors. It's hard to tell the difference between both results. Apart from the rotation and reflection, the triplet loss version seems seems to be a little darker. The flickering effect is still present (which is expected).
+
 ## Remaining Questions
 - Is it possible to perfectly encode R^3 into R^2 in the general case? What about when considering 8bit RGB quantization?
 - How do different losses impact the resulting compression? Perhaps if there is some extra information added via the loss - maybe in a contrastive setting - a different outcome would appear.
